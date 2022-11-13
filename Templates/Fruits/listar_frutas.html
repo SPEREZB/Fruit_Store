@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% block titulo %} LISTAR FRUTAS {% endblock %}
+
+{% block contenido %}
+
+{% if nombre %}
+<div class="card">
+  <div class="card-body">
+         <h2 style="text-align: center;" class="text-secondary">FRUTAS</h2>
+  </div>
+
+  <div class="card-body">
+         <table style="width: 300px;">
+            <thead style="width: 200px; background-color: rgba(0, 255, 255, 0.587);" >
+                <tr>
+                    <th>
+                          ID
+                    </th>
+                    <th>
+                         NOMBRE
+                    </th> 
+                </tr>
+              
+            </thead>
+
+            <tbody style="width: 200px; background-color: rgb(8, 126, 126);">
+                 {% for fruta in nombre %}
+                   <tr> 
+                      <td>{{fruta.id}}</th>
+                      <td>{{fruta.nombre}}</th>
+                    </tr>
+                 {% endfor %}
+            </tbody>
+
+            <tfoot>
+
+            </tfoot>
+         </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
